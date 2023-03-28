@@ -17,9 +17,9 @@ export default function Experience()
         <OrbitControls makeDefault />
         <directionalLight castShadow position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
         <ambientLight intensity={ 0.5 } />       
-        <Float>
+        <Float speed={5}>
             <Text
-                font="./bangers-v20-latin-regular.woff"
+                font="./static/Fonts/viking_middle_runes.ttf"
                 fontSize={0.5}
                 color="black"
                 position-y={2.5}
