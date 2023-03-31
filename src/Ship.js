@@ -1,24 +1,20 @@
+
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { Canvas, useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-
 
 export default function Ship() {
-  const { nodes, materials } = useGLTF("/static/Ship.glb");
-  const texture_ship = useLoader(TextureLoader, '/static/ship_diffuse.jpg');
+  const { nodes, materials } = useGLTF("/static/Barquito.glb");
   return (
-    <group scale={0.001}>
+    <group dispose={null} scale={0.01} position={[ 0, -1.1, 0]}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.imagetostl_mesh0.geometry}
-        material={materials.mat0}>
-            <meshStandardMaterial color={'brown'}/>
-        </mesh>       
+        geometry={nodes.ship.geometry}
+        material={materials["Material.001"]}
+        scale={0.1}
+      />
     </group>
-    //Necesito que me sirvan las texturas aaaaa
   );
 }
 
-useGLTF.preload("/static/Ship.glb");
+useGLTF.preload("/static/Barquito.glb");
